@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   for (var i = 1; i <= 3; i++) {
+      //     console.log(i);
+      //     setTimeout(function () {
+      //       console.log(i);
+      //     }, 1000);
+      //   }
+
+      //   setTimeout(function () {
+      //     console.log(1);
+      //   }, 100);
+
+      function Teacher(name, age, subject) {
+        this.name = name;
+        this.age = age;
+        this.subject = subject;
+        this.teach = function (student) {
+          console.log(`${student}에게 ${this.subject}를 가르칩니다`); // babo에게 javascript를 가르칩니다.
+        };
+      }
+
+      const tissue = new Teacher('tissue', 24, 'javascript');
+      console.log(tissue); // Teacher 생성자 함수, 매개변수(name, age, subject), teach에게 메소드를 정의
+      tissue.teach('babo');
+
+      console.log(tissue.constructor); // 휴지 객체의 속성은 Teacher
+      console.log(tissue instanceof Teacher); // 휴지 객체가 Teacher 함수의 인스턴스 여부 확인, true
+
+      const tissue2 = Teacher('tissue2', 25, 'Javascript');
+
+      // new 키워드를 빼고 호출
+      console.log(tissue2); // tissue2에 첫번째 인자로 받을 객체가 확인되지 않아 undefined
+      console.log(age); // age가 할당 되어서 25가 뜸
+    </script>
+  </body>
+</html>

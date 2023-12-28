@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. 선언적 함수
+      //   test();
+
+      function test() {
+        alert(1);
+      }
+      const result = new test();
+      alert(result); // object
+
+      //   test();
+
+      function test2() {
+        return function () {
+          alert(1);
+        };
+      }
+
+      const result2 = test2();
+      result2(); // alert(1)
+
+      const tissue = {
+        job: 'student',
+        sayJob: function () {
+          console.log(`I am ${this.job}`);
+        },
+      };
+
+      // function 을 객체의 메소드로 실행한경우
+      tissue.sayJob(); // "I am developer"
+
+      // function 을 전역객체의 매소드로 실행한경우
+      const sayJob = tissue.sayJob;
+      sayJob(); // "I am undefined"
+
+      const tissue2 = {
+        job: 'no...',
+        hobby: 'valorant',
+        sayJob: function () {
+          console.log(`My job is ${this.job}`);
+        },
+        sayHobby: () => {
+          console.log(`My hobby is ${this.hobby}`);
+        },
+      };
+
+      // 객체의 메소드로 함수를 실행한 경우
+      tissue2.sayJob(); // "My job is programmer"
+
+      // 객체의 메소드로 화살표함수를 실행한 경우
+      tissue2.sayHobby(); // "My hobby is undefined"
+    </script>
+  </body>
+</html>

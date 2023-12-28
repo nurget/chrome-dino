@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = 1;
+      let str = 'str';
+      str = 'str';
+      str = `str${num}`;
+
+      let bl = true;
+      bl = false;
+
+      let num1 = null; // 값이 없음
+      num1 = undefined; // 정의 되지 않음
+
+      function test(a) {
+        alert(a);
+      }
+
+      //   test(null); // null
+      //   test();
+
+      //
+
+      let func = function () {};
+
+      let arr = [];
+
+      let sym1 = Symbol('1');
+      let sym2 = Symbol('1');
+      console.log(sym1);
+      console.log(sym1 == sym2); // false
+    </script>
+  </body>
+</html>

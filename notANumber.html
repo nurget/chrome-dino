@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let a = 1;
+      let b = 1;
+      console.log(a === b);
+      a += '';
+      console.log(a === b);
+      a = parseInt(a);
+      console.log(a === b);
+
+      a += '';
+      console.log(typeof a);
+      console.log(a === b);
+      a = Number(a);
+      console.log(a === b);
+      console.log(typeof a);
+
+      a = new Number(a); // 쓸 일이 없음
+      console.log(a); // object
+
+      // parseInt와 Number의 차이점
+
+      a = 123;
+      a += '원1';
+      console.log(parseInt(a)); // 숫자만 출력을 해줌
+
+      a = 'a' + 123;
+      a += '원1';
+      console.log(parseInt(a)); // 이건 NaN
+
+      console.log(Number(a)); // NaN
+
+      console.log(isNaN(a)); // 숫자 아니지? 라고 묻는 것. 숫자면 false, 숫자가 아니면 true
+    </script>
+  </body>
+</html>

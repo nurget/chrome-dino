@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="name" />
+    <script>
+      // 객체에 키 값을 추가하는 방법
+      // 1. 생성할 때 바로 바인딩 시키기
+
+      const map = {
+        name: '홍길동',
+      };
+
+      map.name = '안녕';
+
+      // 2. 똑같은 바인딩인데 ...
+      const map2 = {
+        name: '홍길동',
+        age: 22,
+        'first-name': '길동',
+      };
+
+      // 3. 닷(.)을 사용
+      const map3 = {
+        name: '홍길동',
+        age: 22,
+        'first-name': '홍',
+      };
+
+      map3.name = '김길동';
+      map['last-name'] = '김';
+
+      const inputs = document.querySelectorAll('input[id]');
+      const param = {};
+      for (const input of inputs) {
+        param[input.id] = input.value;
+      }
+
+      // 키를 삭제하는 방법
+      map3.name = undefined; // name의 값 자체가 undefined, name이리는 키 자체가 사라지는게 아님
+      console.log(map3);
+
+      delete map3.name;
+      console.log(map3);
+    </script>
+  </body>
+</html>

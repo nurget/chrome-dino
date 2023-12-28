@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const d1 = document.querySelector('#d1');
+      const o1 = {};
+      const o2 = new Object();
+      const o3 = [];
+      const o4 = function () {};
+
+      let obj = {
+        a: '1',
+        b: '2',
+        c: 'hong',
+      };
+      console.log(obj.a); // 1
+      obj = JSON.stringify(obj);
+      console.log(obj.a);
+      obj = JSON.parse(obj); // undefined
+
+      let obj2 = {
+        name: 'hong',
+        age: 33,
+        speak: function () {
+          alert('안녕');
+        },
+      };
+      localStorage.setItem('obj', obj2);
+
+      location.href = './object2.html';
+
+      //   const _back = obj2.speak;
+
+      //   obj2 = JSON.stringify(obj2);
+      //   console.log(obj2);
+
+      //   obj2 = JSON.parse(obj2);
+      //   obj.speak = _back;
+    </script>
+  </body>
+</html>
